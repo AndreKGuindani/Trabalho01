@@ -19,12 +19,12 @@
             <label class="logo">Filmix</label>
             <ul>
                 <li><a class="active" href="#">Filmes</a></li>
-                <li><a href="#">Series</a></li>
+                <li><a href="series.php">Series</a></li>
             </ul>
         </nav>
     </header>
     <main>
-
+    
     </main>
 
 </body>
