@@ -91,7 +91,7 @@
 
         <section class="container-sm pt-5">
             <h3 class="text-light mb-4">🎬 Últimos Lançamentos</h3>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+            <div class="row g-4">
                 <div class="col">
                     <div class="card bg-dark text-light h-100 shadow-sm">
                         <img src="assets/img/thunderbolts.webp" class="card-img-top" alt="Thunderbolts*">
@@ -141,9 +141,67 @@
             </div>
         </section>
 
+        <section class="container-sm pt-5 pb-5">
+            <h3 class="text-light mb-4">🏆 Filmes Premiados no Oscar</h3>
+            <div class="row g-4">
+                <div class="col">
+                    <div class="card bg-dark text-light h-100 shadow-sm">
+                        <img src="assets/img/oppenheimer.webp" class="card-img-top" alt="Oppenheimer">
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Oppenheimer</h6>
+                            <p class="card-text small">A história do criador da bomba atômica. Vencedor de 7 Oscars em
+                                2024.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-dark text-light h-100 shadow-sm">
+                        <img src="assets/img/tudo.webp" class="card-img-top"
+                            alt="Tudo em Todo Lugar ao Mesmo Tempo">
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Tudo em Todo Lugar ao Mesmo Tempo</h6>
+                            <p class="card-text small">Uma viagem multiversal insana. Ganhou 7 Oscars em 2023, incluindo
+                                Melhor Filme.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-dark text-light h-100 shadow-sm">
+                        <img src="assets/img/parasite.webp" class="card-img-top" alt="Parasita">
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Parasita</h6>
+                            <p class="card-text small">Thriller sul-coreano premiado como Melhor Filme em 2020. Crítica
+                                social afiada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-dark text-light h-100 shadow-sm">
+                        <img src="assets/img/nomadland.jpg" class="card-img-top" alt="Nomadland">
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Nomadland</h6>
+                            <p class="card-text small">Uma mulher nômade em busca de liberdade. Vencedor de Melhor Filme
+                                em 2021.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-dark text-light h-100 shadow-sm">
+                        <img src="assets/img/green.jpg" class="card-img-top" alt="Green Book">
+                        <div class="card-body">
+                            <h6 class="card-title mb-1">Green Book</h6>
+                            <p class="card-text small">Uma jornada de amizade e preconceito. Oscar de Melhor Filme em
+                                2019.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
-    <footer class="text-center py-4 mt-5 border-top border-secondary">
+    <footer class="text-center py-4 border-top border-secondary">
         <p class="mb-1">© 2025 Filmix.</p>
         <small>Desenvolvido por André Guindani e André Nascimento</small>
     </footer>

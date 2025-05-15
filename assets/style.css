@@ -68,6 +68,11 @@ main {
   height: 400px;
   object-fit: initial;
 }
+.card{
+  height: 800px;
+}
+
+
 
 footer {
   background-color: #111;
