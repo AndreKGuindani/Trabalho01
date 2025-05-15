@@ -56,6 +56,7 @@ nav ul li a {
 
 main {
   min-height: 400px;
+  background-color: #1c1c1c;
 }
 
 footer {
@@ -65,9 +66,6 @@ footer {
   border-top: 1px solid #333;
 }
 
-main {
-  background-color: #1c1c1c;
-}
 
 h3{
   color: #ccc;

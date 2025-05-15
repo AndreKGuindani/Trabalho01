@@ -26,7 +26,7 @@
     </header>
 
     <main class="pt-4">
-        <section class="banner container-sm text-center">
+        <section class="banner text-center container-sm">
             <h3 class="text-light">Filmes e Séries em Destaque</h3>
 
             <div id="carouselExampleCaptions" class="carousel slide pt-3" data-bs-ride="carousel">
@@ -87,7 +87,7 @@
             </div>
 
         </section>
-        <section>
+        <section class="container-sm">
 
         <h3 class="text-center text-light">Lançamentos</h3>
         <div class="row">
