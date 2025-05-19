@@ -45,9 +45,10 @@ $filmes_acao = [
 $total = count($filmes_acao);
 $por_slide = 5;
 $total_slides =(count($filmes_acao) / $por_slide);
+
 ?>
 
-        <section class="container-sm pt-5" id="acao">
+        <section class="container-sm pt-5 pb-5" id="acao">
             <section>
                 <h4 class="text-light mb-3">Filmes de ação</h4>
                 <div id="carouselExample" class="carousel slide">
@@ -58,7 +59,8 @@ $total_slides =(count($filmes_acao) / $por_slide);
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
                                 <?php
                             $inicio = $s * $por_slide;
-                            for ($i = $s * $por_slide; $i < ($s + 1) * $por_slide && $i < $total; $i++) {
+                            for ($i = $s * $por_slide; $i < ($s + 1) * $por_slide; $i++) {
+                            $modalId = "modal_" . $i;
                             ?>
                                 <div class="col">
                                     <div class="card bg-dark text-light h-100 shadow-sm">
@@ -117,7 +119,7 @@ $por_slide = 5;
 $total_slides = ($total_suspense / $por_slide);
 ?>
 
-        <section class="container-sm pt-5" id="suspense">
+        <section class="container-sm pb-5" id="suspense">
             <h4 class="text-light mb-3">Filmes de suspense</h4>
             <div id="carouselSuspense" class="carousel slide">
                 <div class="carousel-inner">
@@ -126,7 +128,7 @@ $total_slides = ($total_suspense / $por_slide);
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
                             <?php
                         $inicio = $s * $por_slide;
-                        for ($i = $inicio; $i < ($inicio + $por_slide) && $i < $total_suspense; $i++) {
+                        for ($i = $inicio; $i < ($inicio + $por_slide); $i++) {
                         ?>
                             <div class="col">
                                 <div class="card bg-dark text-light h-100 shadow-sm">
@@ -184,7 +186,7 @@ $por_slide = 5;
 $total_slides = ($total_comedia / $por_slide);
 ?>
 
-        <section class="container-sm pt-5" id="comedia">
+        <section class="container-sm pb-5" id="comedia">
             <h4 class="text-light mb-3">Filmes de comédia</h4>
             <div id="carouselComedia" class="carousel slide">
                 <div class="carousel-inner">
@@ -193,7 +195,7 @@ $total_slides = ($total_comedia / $por_slide);
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
                             <?php
                     $inicio = $s * $por_slide;
-                    for ($i = $inicio; $i < ($inicio + $por_slide) && $i < $total_comedia; $i++) {
+                    for ($i = $inicio; $i < ($inicio + $por_slide); $i++) {
                     ?>
                             <div class="col">
                                 <div class="card bg-dark text-light h-100 shadow-sm">
@@ -251,7 +253,7 @@ $por_slide = 5;
 $total_slides = ($total_terror / $por_slide);
 ?>
 
-        <section class="container-sm mt-5" id="terror">
+        <section class="container-sm pb-5" id="terror">
             <h4 class="text-light mb-3">Filmes de terror</h4>
             <div id="carouselTerror" class="carousel slide">
                 <div class="carousel-inner">
