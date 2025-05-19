@@ -65,13 +65,9 @@ main {
   box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
 }
 .card img {
-  height: 400px;
+  height: 350px;
   object-fit: initial;
 }
-.card{
-  height: 800px;
-}
-
 
 
 footer {
