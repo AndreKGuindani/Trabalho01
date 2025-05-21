@@ -28,275 +28,222 @@
     </header>
 
     <main>
+    <section class="container-sm pt-5 pb-5" id="acao">
+    <?php
+    $filmes_acao = [
+        ["titulo" => "John Wick", "ano" => 2014, "diretor" => "Chad Stahelski", "atores" => "Keanu Reeves, Michael Nyqvist", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/1/13/John_wick_ver3.jpg", "premios" => "Indicado ao MTV Movie Awards e ao World Stunt Awards; venceu prêmios de melhor coreografia de luta."],
+        ["titulo" => "Mad Max: Estrada da Fúria", "ano" => 2015, "diretor" => "George Miller", "atores" => "Tom Hardy, Charlize Theron", "classificacao" => "18 anos", "imagem" => "https://musicart.xboxlive.com/7/eea21900-0000-0000-0000-000000000002/504/image.jpg", "premios" => "Vencedor de 6 Oscars, incluindo Melhor Montagem, Figurino e Direção de Arte; indicado a Melhor Filme."],
+        ["titulo" => "Duro de Matar", "ano" => 1988, "diretor" => "John McTiernan", "atores" => "Bruce Willis, Alan Rickman", "classificacao" => "16 anos", "imagem" => "https://play-lh.googleusercontent.com/qqUD5CdYWfD7O2r_dVguxkIfogWUvNeeuGJToMFHtpAs8ps_dQp21o0WonAXiMMguQGk8w", "premios" => "Indicado a 4 Oscars técnicos; considerado um dos melhores filmes de ação de todos os tempos."],
+        ["titulo" => "O Exterminador do Futuro 2", "ano" => 1991, "diretor" => "James Cameron", "atores" => "Arnold Schwarzenegger, Linda Hamilton", "classificacao" => "14 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/92/91/08/20224693.jpg", "premios" => "Vencedor de 4 Oscars, incluindo Melhores Efeitos Visuais e Som."],
+        ["titulo" => "Gladiador", "ano" => 2000, "diretor" => "Ridley Scott", "atores" => "Russell Crowe, Joaquin Phoenix", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/4/44/GladiadorPoster.jpg/250px-GladiadorPoster.jpg", "premios" => "Vencedor de 5 Oscars, incluindo Melhor Filme e Melhor Ator (Russell Crowe)."],
+        ["titulo" => "A Origem", "ano" => 2010, "diretor" => "Christopher Nolan", "atores" => "Leonardo DiCaprio, Joseph Gordon-Levitt", "classificacao" => "14 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/8/84/AOrigemPoster.jpg", "premios" => "Ganhou 4 Oscars, incluindo Melhor Fotografia e Efeitos Visuais."],
+        ["titulo" => "Missão Impossível", "ano" => 1996, "diretor" => "Brian De Palma", "atores" => "Tom Cruise, Jon Voight", "classificacao" => "12 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwQQ3KvN9W7366QI3e0wpFpY5gVMR135OXfg&s", "premios" => "Indicado ao MTV Movie Awards; sucesso comercial e de crítica."],
+        ["titulo" => "Os Vingadores", "ano" => 2012, "diretor" => "Joss Whedon", "atores" => "Robert Downey Jr., Chris Evans", "classificacao" => "12 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/89/43/82/20052140.jpg", "premios" => "Indicado ao Oscar de Melhores Efeitos Visuais; venceu vários prêmios de escolha do público."],
+    ];
+
+    $total = count($filmes_acao);
+    ?>
+
+    <h4 class="text-light mb-3">Filmes de ação</h4>
+    <div class="scroll-carousel px-2">
         <?php
-$filmes_acao = [
-    ["titulo" => "John Wick", "ano" => 2014, "diretor" => "Chad Stahelski", "atores" => "Keanu Reeves, Michael Nyqvist", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/1/13/John_wick_ver3.jpg"],
-    ["titulo" => "Mad Max: Estrada da Fúria", "ano" => 2015, "diretor" => "George Miller", "atores" => "Tom Hardy, Charlize Theron", "classificacao" => "18 anos", "imagem" => "https://musicart.xboxlive.com/7/eea21900-0000-0000-0000-000000000002/504/image.jpg"],
-    ["titulo" => "Duro de Matar", "ano" => 1988, "diretor" => "John McTiernan", "atores" => "Bruce Willis, Alan Rickman", "classificacao" => "16 anos", "imagem" => "https://play-lh.googleusercontent.com/qqUD5CdYWfD7O2r_dVguxkIfogWUvNeeuGJToMFHtpAs8ps_dQp21o0WonAXiMMguQGk8w"],
-    ["titulo" => "Batman: O Cavaleiro das Trevas", "ano" => 2008, "diretor" => "Christopher Nolan", "atores" => "Christian Bale, Heath Ledger", "classificacao" => "14 anos", "imagem" => "https://m.media-amazon.com/images/S/pv-target-images/ae8dddd0abc2fac14052f29bc2ae15ddd86374c0d3bd017171ee6473b8933b29.jpg"],
-    ["titulo" => "Gladiador", "ano" => 2000, "diretor" => "Ridley Scott", "atores" => "Russell Crowe, Joaquin Phoenix", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/4/44/GladiadorPoster.jpg/250px-GladiadorPoster.jpg"],
-    ["titulo" => "A Origem", "ano" => 2010, "diretor" => "Christopher Nolan", "atores" => "Leonardo DiCaprio, Joseph Gordon-Levitt", "classificacao" => "14 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/8/84/AOrigemPoster.jpg"],
-    ["titulo" => "Missão Impossível", "ano" => 1996, "diretor" => "Brian De Palma", "atores" => "Tom Cruise, Jon Voight", "classificacao" => "12 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwQQ3KvN9W7366QI3e0wpFpY5gVMR135OXfg&s"],
-    ["titulo" => "Os Vingadores", "ano" => 2012, "diretor" => "Joss Whedon", "atores" => "Robert Downey Jr., Chris Evans", "classificacao" => "12 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/89/43/82/20052140.jpg"],
-    ["titulo" => "O Exterminador do Futuro 2", "ano" => 1991, "diretor" => "James Cameron", "atores" => "Arnold Schwarzenegger, Linda Hamilton", "classificacao" => "14 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/92/91/08/20224693.jpg"],
-    ["titulo" => "Viúva Negra", "ano" => 2021, "diretor" => "Cate Shortland", "atores" => "Scarlett Johansson, Florence Pugh", "classificacao" => "14 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/8/88/Black_Widow_%282020%29.jpg/250px-Black_Widow_%282020%29.jpg"]
-];
-
-$total = count($filmes_acao);
-$por_slide = 5;
-$total_slides =(count($filmes_acao) / $por_slide);
-
-?>
-
-        <section class="container-sm pt-5 pb-5" id="acao">
-            <section>
-                <h4 class="text-light mb-3">Filmes de ação</h4>
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-
-                        <?php for ($s = 0; $s < $total_slides; $s++) { ?>
-                        <div class="carousel-item <?=($s == 0 ? 'active' : '') ?>">
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-                                <?php
-                            $inicio = $s * $por_slide;
-                            for ($i = $s * $por_slide; $i < ($s + 1) * $por_slide; $i++) {
-                            $modalId = "modal_" . $i;
-                            ?>
-                                <div class="col">
-                                    <div class="card bg-dark text-light h-100 shadow-sm">
-                                        <img src="<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top"
-                                            alt="<?= $filmes_acao[$i]["titulo"] ?>">
-                                        <div class="card-body">
-                                            <h6 class="card-title mb-1"><?= $filmes_acao[$i]["titulo"] ?></h6>
-                                            <p class="card-text small"><strong>Ano:</strong>
-                                                <?= $filmes_acao[$i]["ano"] ?></p>
-                                            <p class="card-text small"><strong>Diretor:</strong>
-                                                <?= $filmes_acao[$i]["diretor"] ?></p>
-                                            <p class="card-text small"><strong>Atores:</strong>
-                                                <?= $filmes_acao[$i]["atores"] ?></p>
-                                            <p class="card-text small"><strong>Classificação:</strong>
-                                                <?= $filmes_acao[$i]["classificacao"] ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <?php } ?>
-
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Próximo</span>
-                    </button>
-                </div>
-            </section>
-        </section>
-
-        <?php
-$filmes_suspense = [
-    ["titulo" => "Seven", "ano" => 1995, "diretor" => "David Fincher", "atores" => "Brad Pitt, Morgan Freeman", "classificacao" => "18 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRROBAac4LjCY9YFSUy934ryVCNKW-MCJlY3A&s"],
-    ["titulo" => "O Iluminado", "ano" => 1980, "diretor" => "Stanley Kubrick", "atores" => "Jack Nicholson, Shelley Duvall", "classificacao" => "16 anos", "imagem" => "https://br.web.img3.acsta.net/pictures/14/10/10/19/21/152595.jpg"],
-    ["titulo" => "O Silêncio dos Inocentes", "ano" => 1991, "diretor" => "Jonathan Demme", "atores" => "Jodie Foster, Anthony Hopkins", "classificacao" => "18 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvn_etn7rqDp2pOzLLs_K1kQD0aRhEPeqIWQ&s"],
-    ["titulo" => "Os Outros", "ano" => 2001, "diretor" => "Alejandro Amenábar", "atores" => "Nicole Kidman, Fionnula Flanagan", "classificacao" => "14 anos", "imagem" => "https://m.media-amazon.com/images/I/611tlXI0pwL._AC_UF1000,1000_QL80_.jpg"],
-    ["titulo" => "Garota Exemplar", "ano" => 2014, "diretor" => "David Fincher", "atores" => "Ben Affleck, Rosamund Pike", "classificacao" => "16 anos", "imagem" => "https://m.media-amazon.com/images/I/81sSyD75y6L._AC_UF1000,1000_QL80_.jpg"],
-    ["titulo" => "Os Suspeitos", "ano" => 1995, "diretor" => "Bryan Singer", "atores" => "Kevin Spacey, Gabriel Byrne", "classificacao" => "16 anos", "imagem" => "https://br.web.img3.acsta.net/pictures/210/509/21050952_20131018203347915.jpg"],
-    ["titulo" => "Corra!", "ano" => 2017, "diretor" => "Jordan Peele", "atores" => "Daniel Kaluuya, Allison Williams", "classificacao" => "14 anos", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/17/04/19/21/08/577190.jpg"],
-    ["titulo" => "O Sexto Sentido", "ano" => 1999, "diretor" => "M. Night Shyamalan", "atores" => "Bruce Willis, Haley Joel Osment", "classificacao" => "14 anos", "imagem" => "https://play-lh.googleusercontent.com/Z349tbhk9pphjy6y3czs-DUo665ysjhQ_7-k2pSR9pup-_qqn_hhzeujOaohnPH4LVM"],
-    ["titulo" => "A Mulher na Janela", "ano" => 2021, "diretor" => "Joe Wright", "atores" => "Amy Adams, Julianne Moore", "classificacao" => "16 anos", "imagem" => "https://br.web.img3.acsta.net/pictures/19/12/19/20/45/2019215.jpg"],
-    ["titulo" => "Ilha do Medo", "ano" => 2010, "diretor" => "Martin Scorsese", "atores" => "Leonardo DiCaprio, Mark Ruffalo", "classificacao" => "16 anos", "imagem" => "https://musicart.xboxlive.com/7/b4541100-0000-0000-0000-000000000002/504/image.jpg"],
-];
-
-$total_suspense = count($filmes_suspense);
-$por_slide = 5;
-$total_slides = ($total_suspense / $por_slide);
-?>
-
-        <section class="container-sm pb-5" id="suspense">
-            <h4 class="text-light mb-3">Filmes de suspense</h4>
-            <div id="carouselSuspense" class="carousel slide">
-                <div class="carousel-inner">
-                    <?php for ($s = 0; $s < $total_slides; $s++) { ?>
-                    <div class="carousel-item <?= ($s == 0 ? 'active' : '') ?>">
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-                            <?php
-                        $inicio = $s * $por_slide;
-                        for ($i = $inicio; $i < ($inicio + $por_slide); $i++) {
-                        ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $filmes_suspense[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $filmes_suspense[$i]["titulo"] ?>">
-                                    <div class="card-body">
-                                        <h6 class="card-title mb-1"><?= $filmes_suspense[$i]["titulo"] ?></h6>
-                                        <p class="card-text small"><strong>Ano:</strong>
-                                            <?= $filmes_suspense[$i]["ano"] ?></p>
-                                        <p class="card-text small"><strong>Diretor:</strong>
-                                            <?= $filmes_suspense[$i]["diretor"] ?></p>
-                                        <p class="card-text small"><strong>Atores:</strong>
-                                            <?= $filmes_suspense[$i]["atores"] ?></p>
-                                        <p class="card-text small"><strong>Classificação:</strong>
-                                            <?= $filmes_suspense[$i]["classificacao"] ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-                        </div>
-                    </div>
-                    <?php } ?>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuspense"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselSuspense"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
+        for ($i = 0; $i < $total; $i++) {
+            $modalId = "modal_" . $i;
+        ?>
+        <div class="card bg-dark text-light shadow-sm">
+            <img src="<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
+            <div class="card-body cardFilm">
+                <h6 class="card-title"><?= $filmes_acao[$i]["titulo"] ?></h6>
+                <p class="card-text small"><strong>Ano:</strong> <?= $filmes_acao[$i]["ano"] ?></p>
+                <p class="card-text small"><strong>Diretor:</strong> <?= $filmes_acao[$i]["diretor"] ?></p>
+                <p class="card-text small"><strong>Atores:</strong> <?= $filmes_acao[$i]["atores"] ?></p>
+                <p class="card-text small"><strong>Classificação:</strong> <?= $filmes_acao[$i]["classificacao"] ?></p>
+                <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
             </div>
-        </section>
+        </div>
 
-
-        <?php
-$filmes_comedia = [
-    ["titulo" => "O Máskara", "ano" => 1994, "diretor" => "Chuck Russell", "atores" => "Jim Carrey, Cameron Diaz", "classificacao" => "12 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/90/86/15/20116705.jpg"],
-    ["titulo" => "Esqueceram de Mim 2", "ano" => 1992, "diretor" => "Chris Columbus", "atores" => "Macaulay Culkin, Joe Pesci", "classificacao" => "Livre", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsj1OMRR2NeDrdKcrlFLIzJrYSG7rZWJy6cg&s"],
-    ["titulo" => "Se Beber, Não Case", "ano" => 2009, "diretor" => "Todd Phillips", "atores" => "Bradley Cooper, Ed Helms", "classificacao" => "16 anos", "imagem" => "https://m.media-amazon.com/images/S/pv-target-images/7de3e539b111d5ce87b254329ad0af057a06788d1eec2b6f966f8aa2f9793753.jpg"],
-    ["titulo" => "Descompensada", "ano" => 2014, "diretor" => "Ken Marino", "atores" => "Anna Faris, Eugenio Derbez", "classificacao" => "14 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl_QCFlD9P8FOfWrTge7xdhvdRAS5tRkLuPw&s"],
-    ["titulo" => "Uma Noite no Museu", "ano" => 2006, "diretor" => "Shawn Levy", "atores" => "Ben Stiller, Robin Williams", "classificacao" => "Livre", "imagem" => "https://images.justwatch.com/poster/246488291/s718/uma-noite-no-museu.jpg"],
-    ["titulo" => "As Férias de Mr. Bean", "ano" => 2007, "diretor" => "Steve Bendelack", "atores" => "Rowan Atkinson", "classificacao" => "Livre", "imagem" => "https://br.web.img2.acsta.net/c_310_420/medias/nmedia/18/90/43/12/20096263.jpg"],
-    ["titulo" => "Borat", "ano" => 2006, "diretor" => "Larry Charles", "atores" => "Sacha Baron Cohen", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/f/f7/Borat%21.jpg"],
-    ["titulo" => "Click", "ano" => 2006, "diretor" => "Frank Coraci", "atores" => "Adam Sandler, Kate Beckinsale", "classificacao" => "12 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/b/bd/Click_film.jpg"],
-    ["titulo" => "As Branquelas", "ano" => 2004, "diretor" => "Keenen Ivory Wayans", "atores" => "Shawn Wayans, Marlon Wayans", "classificacao" => "14 anos", "imagem" => "https://br.web.img3.acsta.net/medias/nmedia/18/97/52/82/20534159.jpg"],
-    ["titulo" => "Jumanji", "ano" => 2019, "diretor" => "Jake Kasdan", "atores" => "Dwayne Johnson, Kevin Hart", "classificacao" => "12 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/0/0d/Jumanji_The_Next_Level.jpg/250px-Jumanji_The_Next_Level.jpg"],
-];
-
-$total_comedia = count($filmes_comedia);
-$por_slide = 5;
-$total_slides = ($total_comedia / $por_slide);
-?>
-
-        <section class="container-sm pb-5" id="comedia">
-            <h4 class="text-light mb-3">Filmes de comédia</h4>
-            <div id="carouselComedia" class="carousel slide">
-                <div class="carousel-inner">
-                    <?php for ($s = 0; $s < $total_slides; $s++) { ?>
-                    <div class="carousel-item <?= ($s == 0 ? 'active' : '') ?>">
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-                            <?php
-                    $inicio = $s * $por_slide;
-                    for ($i = $inicio; $i < ($inicio + $por_slide); $i++) {
-                    ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $filmes_comedia[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $filmes_comedia[$i]["titulo"] ?>">
-                                    <div class="card-body">
-                                        <h6 class="card-title mb-1"><?= $filmes_comedia[$i]["titulo"] ?></h6>
-                                        <p class="card-text small"><strong>Ano:</strong>
-                                            <?= $filmes_comedia[$i]["ano"] ?></p>
-                                        <p class="card-text small"><strong>Diretor:</strong>
-                                            <?= $filmes_comedia[$i]["diretor"] ?></p>
-                                        <p class="card-text small"><strong>Atores:</strong>
-                                            <?= $filmes_comedia[$i]["atores"] ?></p>
-                                        <p class="card-text small"><strong>Classificação:</strong>
-                                            <?= $filmes_comedia[$i]["classificacao"] ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-                        </div>
+        <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $filmes_acao[$i]["titulo"] ?></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
-                    <?php } ?>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselComedia"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselComedia"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
-            </div>
-        </section>
-
-
-        <?php
-$filmes_terror = [
-    ["titulo" => "Invocação do Mal", "ano" => 2013, "diretor" => "James Wan", "atores" => "Vera Farmiga, Patrick Wilson", "classificacao" => "16+", "imagem" => "https://br.web.img2.acsta.net/pictures/210/166/21016629_2013062820083878.jpg"],
-    ["titulo" => "It: A Coisa", "ano" => 2017, "diretor" => "Andy Muschietti", "atores" => "Bill Skarsgård, Jaeden Martell", "classificacao" => "16+", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhNs9d8KDmPw6UfxmjMpBOZH9szbSt6PE0UA&s"],
-    ["titulo" => "Nós", "ano" => 2019, "diretor" => "Jordan Peele", "atores" => "Lupita Nyong'o, Winston Duke", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/pictures/19/02/07/14/16/5034340.jpg"],
-    ["titulo" => "A Bruxa", "ano" => 2015, "diretor" => "Robert Eggers", "atores" => "Anya Taylor-Joy, Ralph Ineson", "classificacao" => "18+", "imagem" => "https://br.web.img3.acsta.net/pictures/16/02/02/11/51/346769.jpg"],
-    ["titulo" => "O Chamado", "ano" => 2002, "diretor" => "Gore Verbinski", "atores" => "Naomi Watts, Martin Henderson", "classificacao" => "16+", "imagem" => "https://br.web.img2.acsta.net/pictures/14/12/02/19/31/398428.jpg"],
-    ["titulo" => "Corra!", "ano" => 2017, "diretor" => "Jordan Peele", "atores" => "Daniel Kaluuya, Allison Williams", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/17/04/19/21/08/577190.jpg"],
-    ["titulo" => "Hereditário", "ano" => 2018, "diretor" => "Ari Aster", "atores" => "Toni Collette, Milly Shapiro", "classificacao" => "18+", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSjw7PiW7mPQoRWm4yRUbo2IJL-QykqyVh0Q&s"],
-    ["titulo" => "Atividade Paranormal", "ano" => 2007, "diretor" => "Oren Peli", "atores" => "Katie Featherston, Micah Sloat", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/medias/nmedia/18/87/89/84/20028680.jpg"],
-    ["titulo" => "Halloween", "ano" => 2018, "diretor" => "David Gordon Green", "atores" => "Jamie Lee Curtis, Judy Greer", "classificacao" => "18+", "imagem" => "https://br.web.img3.acsta.net/pictures/18/09/05/17/21/5348044.jpg"],
-    ["titulo" => "Terror em Silent Hill", "ano" => 2006, "diretor" => "Christophe Gans", "atores" => "Radha Mitchell, Sean Bean", "classificacao" => "16+", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNXzeWMvkpoq_RRDlRy0eOogiUk1P6p_yQQw&s"],
-];
-
-$total_terror = count($filmes_terror);
-$por_slide = 5;
-$total_slides = ($total_terror / $por_slide);
-?>
-
-        <section class="container-sm pb-5" id="terror">
-            <h4 class="text-light mb-3">Filmes de terror</h4>
-            <div id="carouselTerror" class="carousel slide">
-                <div class="carousel-inner">
-                    <?php for ($s = 0; $s < $total_slides; $s++) { ?>
-                    <div class="carousel-item <?= ($s == 0 ? 'active' : '') ?>">
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-                            <?php
-                    $inicio = $s * $por_slide;
-                    for ($i = $inicio; $i < ($inicio + $por_slide) && $i < $total_terror; $i++) {
-                    ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $filmes_terror[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $filmes_terror[$i]["titulo"] ?>">
-                                    <div class="card-body">
-                                        <h6 class="card-title mb-1"><?= $filmes_terror[$i]["titulo"] ?></h6>
-                                        <p class="card-text small">
-                                            <strong>Direção:</strong> <?= $filmes_terror[$i]["diretor"] ?><br>
-                                            <strong>Atores:</strong> <?= $filmes_terror[$i]["atores"] ?><br>
-                                            <strong>Ano:</strong> <?= $filmes_terror[$i]["ano"] ?><br>
-                                            <strong>Classificação:</strong> <?= $filmes_terror[$i]["classificacao"] ?>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
-                        </div>
+                    <div class="modal-body">
+                        <?= $filmes_acao[$i]["premios"] ?>
                     </div>
-                    <?php } ?>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTerror"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselTerror"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
             </div>
-        </section>
+        </div>
+        <?php } ?>
+    </div>
+</section>
+
+<section class="container-sm pt-5 pb-5" id="suspense">
+    <?php
+    $filmes_suspense = [
+        ["titulo" => "Seven", "ano" => 1995, "diretor" => "David Fincher", "atores" => "Brad Pitt, Morgan Freeman", "classificacao" => "18 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRROBAac4LjCY9YFSUy934ryVCNKW-MCJlY3A&s", "premios" => "3 Oscars, 5 Prêmios BAFTA"],
+        ["titulo" => "O Iluminado", "ano" => 1980, "diretor" => "Stanley Kubrick", "atores" => "Jack Nicholson, Shelley Duvall", "classificacao" => "16 anos", "imagem" => "https://cinemateca.org.br/wp-content/uploads/2024/09/cbs_o_iluminado.jpg", "premios" => "Indicado a 2 Oscars"],
+        ["titulo" => "O Silêncio dos Inocentes", "ano" => 1991, "diretor" => "Jonathan Demme", "atores" => "Jodie Foster, Anthony Hopkins", "classificacao" => "18 anos", "imagem" => "https://m.media-amazon.com/images/M/MV5BMTBlY2FjM2EtMWIxYy00NWE2LWE0MWUtMjI2NjZjZDE2YWYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "premios" => "5 Oscars, incluindo Melhor Filme"],
+        ["titulo" => "Os Outros", "ano" => 2001, "diretor" => "Alejandro Amenábar", "atores" => "Nicole Kidman, Fionnula Flanagan", "classificacao" => "14 anos", "imagem" => "https://m.media-amazon.com/images/I/611tlXI0pwL._AC_UF1000,1000_QL80_.jpg", "premios" => "Vencedor do Goya de Melhor Filme Estrangeiro"],
+        ["titulo" => "Garota Exemplar", "ano" => 2014, "diretor" => "David Fincher", "atores" => "Ben Affleck, Rosamund Pike", "classificacao" => "16 anos", "imagem" => "https://m.media-amazon.com/images/I/81sSyD75y6L._AC_UF1000,1000_QL80_.jpg", "premios" => "Indicado ao Globo de Ouro"],
+        ["titulo" => "Os Suspeitos", "ano" => 1995, "diretor" => "Bryan Singer", "atores" => "Kevin Spacey, Gabriel Byrne", "classificacao" => "16 anos", "imagem" => "https://br.web.img3.acsta.net/pictures/210/509/21050952_20131018203347915.jpg", "premios" => "Prêmio do Festival de Cannes"],
+        ["titulo" => "Corra!", "ano" => 2017, "diretor" => "Jordan Peele", "atores" => "Daniel Kaluuya, Allison Williams", "classificacao" => "14 anos", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/17/04/19/21/08/577190.jpg", "premios" => "Oscar de Melhor Roteiro Original"],
+        ["titulo" => "O Sexto Sentido", "ano" => 1999, "diretor" => "M. Night Shyamalan", "atores" => "Bruce Willis, Haley Joel Osment", "classificacao" => "14 anos", "imagem" => "https://play-lh.googleusercontent.com/Z349tbhk9pphjy6y3czs-DUo665ysjhQ_7-k2pSR9pup-_qqn_hhzeujOaohnPH4LVM", "premios" => "6 indicações ao Oscar"],
+    ];
+
+    $total_suspense = count($filmes_suspense);
+    ?>
+
+    <h4 class="text-light mb-3">Filmes de suspense</h4>
+    <div class="scroll-carousel px-2">
+        <?php
+        for ($i = 0; $i < $total_suspense; $i++) {
+            $modalId = "modal_suspense_" . $i;
+        ?>
+        <div class="card bg-dark text-light shadow-sm">
+            <img src="<?= $filmes_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_suspense[$i]["titulo"] ?>">
+            <div class="card-body cardFilm">
+                <h6 class="card-title"><?= $filmes_suspense[$i]["titulo"] ?></h6>
+                <p class="card-text small"><strong>Ano:</strong> <?= $filmes_suspense[$i]["ano"] ?></p>
+                <p class="card-text small"><strong>Diretor:</strong> <?= $filmes_suspense[$i]["diretor"] ?></p>
+                <p class="card-text small"><strong>Atores:</strong> <?= $filmes_suspense[$i]["atores"] ?></p>
+                <p class="card-text small"><strong>Classificação:</strong> <?= $filmes_suspense[$i]["classificacao"] ?></p>
+                <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $filmes_suspense[$i]["titulo"] ?></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?= $filmes_suspense[$i]["premios"] ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+</section>
+
+
+<section class="container-sm pb-5" id="comedia">
+    <?php
+    $filmes_comedia = [
+        ["titulo" => "O Máskara", "ano" => 1994, "diretor" => "Chuck Russell", "atores" => "Jim Carrey, Cameron Diaz", "classificacao" => "12 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/90/86/15/20116705.jpg", "premios" => "Indicado ao MTV Movie Awards"],
+        ["titulo" => "Esqueceram de Mim 2", "ano" => 1992, "diretor" => "Chris Columbus", "atores" => "Macaulay Culkin, Joe Pesci", "classificacao" => "Livre", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsj1OMRR2NeDrdKcrlFLIzJrYSG7rZWJy6cg&s", "premios" => "Prêmio Kids' Choice Award"],
+        ["titulo" => "Se Beber, Não Case", "ano" => 2009, "diretor" => "Todd Phillips", "atores" => "Bradley Cooper, Ed Helms", "classificacao" => "16 anos", "imagem" => "https://m.media-amazon.com/images/S/pv-target-images/7de3e539b111d5ce87b254329ad0af057a06788d1eec2b6f966f8aa2f9793753.jpg", "premios" => "Vencedor do MTV Movie Award de Melhor Comédia"],
+        ["titulo" => "Descompensada", "ano" => 2014, "diretor" => "Ken Marino", "atores" => "Anna Faris, Eugenio Derbez", "classificacao" => "14 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl_QCFlD9P8FOfWrTge7xdhvdRAS5tRkLuPw&s", "premios" => "Sem informações de prêmios"],
+        ["titulo" => "Uma Noite no Museu", "ano" => 2006, "diretor" => "Shawn Levy", "atores" => "Ben Stiller, Robin Williams", "classificacao" => "Livre", "imagem" => "https://images.justwatch.com/poster/246488291/s718/uma-noite-no-museu.jpg", "premios" => "Indicado ao Kids' Choice Awards"],
+        ["titulo" => "As Férias de Mr. Bean", "ano" => 2007, "diretor" => "Steve Bendelack", "atores" => "Rowan Atkinson", "classificacao" => "Livre", "imagem" => "https://br.web.img2.acsta.net/c_310_420/medias/nmedia/18/90/43/12/20096263.jpg", "premios" => "Prêmio BAFTA de Comédia"],
+        ["titulo" => "Borat", "ano" => 2006, "diretor" => "Larry Charles", "atores" => "Sacha Baron Cohen", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/f/f7/Borat%21.jpg", "premios" => "Indicado ao Globo de Ouro"],
+        ["titulo" => "Click", "ano" => 2006, "diretor" => "Frank Coraci", "atores" => "Adam Sandler, Kate Beckinsale", "classificacao" => "12 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/b/bd/Click_film.jpg", "premios" => "Sem informações"],
+    ];
+
+    $total_comedia = count($filmes_comedia);
+    ?>
+
+    <h4 class="text-light mb-3">Filmes de comédia</h4>
+    <div class="scroll-carousel px-2">
+        <?php for ($i = 0; $i < $total_comedia; $i++) {
+            $modalId = "modal_comedia_" . $i;
+        ?>
+        <div class="card bg-dark text-light shadow-sm">
+            <img src="<?= $filmes_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_comedia[$i]["titulo"] ?>">
+            <div class="card-body cardFilm">
+                <h6 class="card-title"><?= $filmes_comedia[$i]["titulo"] ?></h6>
+                <p class="card-text small"><strong>Ano:</strong> <?= $filmes_comedia[$i]["ano"] ?></p>
+                <p class="card-text small"><strong>Diretor:</strong> <?= $filmes_comedia[$i]["diretor"] ?></p>
+                <p class="card-text small"><strong>Atores:</strong> <?= $filmes_comedia[$i]["atores"] ?></p>
+                <p class="card-text small"><strong>Classificação:</strong> <?= $filmes_comedia[$i]["classificacao"] ?></p>
+                <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $filmes_comedia[$i]["titulo"] ?></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?= $filmes_comedia[$i]["premios"] ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+</section>
+
+
+        <section class="container-sm pt-5 pb-5" id="terror">
+    <?php
+    $filmes_terror = [
+        ["titulo" => "Invocação do Mal", "ano" => 2013, "diretor" => "James Wan", "atores" => "Vera Farmiga, Patrick Wilson", "classificacao" => "16+", "imagem" => "https://br.web.img2.acsta.net/pictures/210/166/21016629_2013062820083878.jpg", "premios" => "Indicado ao Saturn Awards"],
+        ["titulo" => "It: A Coisa", "ano" => 2017, "diretor" => "Andy Muschietti", "atores" => "Bill Skarsgård, Jaeden Martell", "classificacao" => "16+", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhNs9d8KDmPw6UfxmjMpBOZH9szbSt6PE0UA&s", "premios" => "Vencedor do MTV Movie & TV Awards"],
+        ["titulo" => "Nós", "ano" => 2019, "diretor" => "Jordan Peele", "atores" => "Lupita Nyong'o, Winston Duke", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/pictures/19/02/07/14/16/5034340.jpg", "premios" => "Prêmio NAACP Image Awards"],
+        ["titulo" => "A Bruxa", "ano" => 2015, "diretor" => "Robert Eggers", "atores" => "Anya Taylor-Joy, Ralph Ineson", "classificacao" => "18+", "imagem" => "https://br.web.img3.acsta.net/pictures/16/02/02/11/51/346769.jpg", "premios" => "Indicado ao Independent Spirit Awards"],
+        ["titulo" => "O Chamado", "ano" => 2002, "diretor" => "Gore Verbinski", "atores" => "Naomi Watts, Martin Henderson", "classificacao" => "16+", "imagem" => "https://br.web.img2.acsta.net/pictures/14/12/02/19/31/398428.jpg", "premios" => "Prêmio MTV Movie Award de Melhor Performance Assustadora"],
+        ["titulo" => "Corra!", "ano" => 2017, "diretor" => "Jordan Peele", "atores" => "Daniel Kaluuya, Allison Williams", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/17/04/19/21/08/577190.jpg", "premios" => "Vencedor do Critics' Choice Movie Award"],
+        ["titulo" => "Hereditário", "ano" => 2018, "diretor" => "Ari Aster", "atores" => "Toni Collette, Milly Shapiro", "classificacao" => "18+", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSjw7PiW7mPQoRWm4yRUbo2IJL-QykqyVh0Q&s", "premios" => "Indicado ao Saturn Awards"],
+        ["titulo" => "Atividade Paranormal", "ano" => 2007, "diretor" => "Oren Peli", "atores" => "Katie Featherston, Micah Sloat", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/medias/nmedia/18/87/89/84/20028680.jpg", "premios" => "Vencedor do MTV Movie Award de Melhor Filme de Terror"],
+    ];
+
+    $total_terror = count($filmes_terror);
+    ?>
+
+    <h4 class="text-light mb-3">Filmes de terror</h4>
+    <div class="scroll-carousel px-2">
+        <?php for ($i = 0; $i < $total_terror; $i++) {
+            $modalId = "modal_terror_" . $i;
+        ?>
+        <div class="card bg-dark text-light shadow-sm">
+            <img src="<?= $filmes_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_terror[$i]["titulo"] ?>">
+            <div class="card-body cardFilm">
+                <h6 class="card-title"><?= $filmes_terror[$i]["titulo"] ?></h6>
+                <p class="card-text small"><strong>Ano:</strong> <?= $filmes_terror[$i]["ano"] ?></p>
+                <p class="card-text small"><strong>Diretor:</strong> <?= $filmes_terror[$i]["diretor"] ?></p>
+                <p class="card-text small"><strong>Atores:</strong> <?= $filmes_terror[$i]["atores"] ?></p>
+                <p class="card-text small"><strong>Classificação:</strong> <?= $filmes_terror[$i]["classificacao"] ?></p>
+                <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $filmes_terror[$i]["titulo"] ?></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?= $filmes_terror[$i]["premios"] ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+    </div>
+</section>
+
 
     </main>
 
