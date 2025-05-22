@@ -41,13 +41,12 @@
         ["titulo" => "Os Vingadores", "ano" => 2012, "diretor" => "Joss Whedon", "atores" => "Robert Downey Jr., Chris Evans", "classificacao" => "12 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/89/43/82/20052140.jpg", "premios" => "Indicado ao Oscar de Melhores Efeitos Visuais; venceu vários prêmios de escolha do público."],
     ];
 
-    $total = count($filmes_acao);
     ?>
 
     <h4 class="text-light mb-3">Filmes de ação</h4>
     <div class="scroll-carousel px-2">
         <?php
-        for ($i = 0; $i < $total; $i++) {
+        for ($i = 0; $i < count($filmes_acao); $i++) {
             $modalId = "modal_" . $i;
         ?>
         <div class="card bg-dark text-light shadow-sm">
@@ -95,13 +94,12 @@
         ["titulo" => "O Sexto Sentido", "ano" => 1999, "diretor" => "M. Night Shyamalan", "atores" => "Bruce Willis, Haley Joel Osment", "classificacao" => "14 anos", "imagem" => "https://play-lh.googleusercontent.com/Z349tbhk9pphjy6y3czs-DUo665ysjhQ_7-k2pSR9pup-_qqn_hhzeujOaohnPH4LVM", "premios" => "6 indicações ao Oscar"],
     ];
 
-    $total_suspense = count($filmes_suspense);
     ?>
 
     <h4 class="text-light mb-3">Filmes de suspense</h4>
     <div class="scroll-carousel px-2">
         <?php
-        for ($i = 0; $i < $total_suspense; $i++) {
+        for ($i = 0; $i < count($filmes_suspense); $i++) {
             $modalId = "modal_suspense_" . $i;
         ?>
         <div class="card bg-dark text-light shadow-sm">
@@ -150,12 +148,11 @@
         ["titulo" => "Click", "ano" => 2006, "diretor" => "Frank Coraci", "atores" => "Adam Sandler, Kate Beckinsale", "classificacao" => "12 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/b/bd/Click_film.jpg", "premios" => "Sem informações"],
     ];
 
-    $total_comedia = count($filmes_comedia);
     ?>
 
     <h4 class="text-light mb-3">Filmes de comédia</h4>
     <div class="scroll-carousel px-2">
-        <?php for ($i = 0; $i < $total_comedia; $i++) {
+        <?php for ($i = 0; $i < count($filmes_comedia); $i++) {
             $modalId = "modal_comedia_" . $i;
         ?>
         <div class="card bg-dark text-light shadow-sm">
@@ -204,12 +201,11 @@
         ["titulo" => "Atividade Paranormal", "ano" => 2007, "diretor" => "Oren Peli", "atores" => "Katie Featherston, Micah Sloat", "classificacao" => "16+", "imagem" => "https://br.web.img3.acsta.net/medias/nmedia/18/87/89/84/20028680.jpg", "premios" => "Vencedor do MTV Movie Award de Melhor Filme de Terror"],
     ];
 
-    $total_terror = count($filmes_terror);
     ?>
 
     <h4 class="text-light mb-3">Filmes de terror</h4>
     <div class="scroll-carousel px-2">
-        <?php for ($i = 0; $i < $total_terror; $i++) {
+        <?php for ($i = 0; $i < count($filmes_terror); $i++) {
             $modalId = "modal_terror_" . $i;
         ?>
         <div class="card bg-dark text-light shadow-sm">

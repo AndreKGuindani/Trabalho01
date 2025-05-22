@@ -38,18 +38,17 @@ $series_acao = [
     ["titulo" => "Vikings", "imagem" => "https://br.web.img2.acsta.net/c_310_420/pictures/19/12/04/22/35/3436063.jpg", "atores" => "Travis Fimmel, Katheryn Winnick, Clive Standen", "diretor" => "Michael Hirst", "classificacao" => "18", "episodios" => 89, "temporadas" => 6]
 ];
 ?>
-                <h4 class="text-light mb-3">Séries de ação</h4>
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row g-4">
-                            <?php
-                            for ($i=0;$i<count($series_acao); $i++) {
-                            ?>
-                                <div class="col">
-                                    <div class="card bg-dark text-light h-100 shadow-sm">
-                                        <img src="<?= $series_acao[$i]["imagem"] ?>" class="card-img-top"
-                                            alt="<?= $series_acao[$i]["titulo"] ?>">
+    <h4 class="text-light mb-3">Séries de ação</h4>
+        <div id="carouselExample" class="carousel slide">
+             <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <?php
+                        for ($i=0;$i<count($series_acao); $i++) {
+                        ?>
+                            <div class="col">
+                                <div class="card bg-dark text-light h-100 shadow-sm">
+                                    <img src="<?= $series_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_acao[$i]["titulo"] ?>">
                                         <div class="card-body">
                                             <h6 class="card-title mb-1"><?= $series_acao[$i]["titulo"] ?></h6>
                                             <p class="card-text small"><strong>Diretor:</strong>
@@ -68,7 +67,6 @@ $series_acao = [
                                 <?php } ?>
                             </div>
                         </div>
-
                     </div>
                 </div>
         </section>
@@ -83,18 +81,17 @@ $series_suspense = [
     ["titulo" => "True Detective", "imagem" => "https://m.media-amazon.com/images/I/81dEbr7mJCL._AC_SY741_.jpg", "atores" => "Matthew McConaughey, Woody Harrelson, Mahershala Ali", "diretor" => "Nic Pizzolatto", "classificacao" => "18", "episodios" => 28, "temporadas" => 4]
 ];
 ?>
-            <h4 class="text-light mb-3">Séries de suspense</h4>
-            <div id="carouselSuspense" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <?php
+    <h4 class="text-light mb-3">Séries de suspense</h4>
+        <div id="carouselSuspense" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <?php
                         for ($i = 0; $i < count($series_suspense); $i++) {
                         ?>
                             <div class="col">
                                 <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $series_suspense[$i]["titulo"] ?>">
+                                    <img src="<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_suspense[$i]["titulo"] ?>">
                                     <div class="card-body">
                                         <h6 class="card-title mb-1"><?= $series_suspense[$i]["titulo"] ?></h6>
                                         <p class="card-text small"><strong>Diretor:</strong>
@@ -127,13 +124,13 @@ $series_comedia = [
     ["titulo" => "The Big Bang Theory", "imagem" => "https://m.media-amazon.com/images/I/81ksNXITStL._AC_UF1000,1000_QL80_.jpg", "atores" => "Jim Parsons, Johnny Galecki, Kaley Cuoco", "diretor" => "Chuck Lorre", "classificacao" => "12", "episodios" => 279, "temporadas" => 12]
 ];
 ?>
-            <h4 class="text-light mb-3">Séries de comédia</h4>
-            <div id="carouselComedia" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <?php
-                    for ($i = 0; $i < count($series_comedia); $i++) {
+    <h4 class="text-light mb-3">Séries de comédia</h4>
+        <div id="carouselComedia" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <?php
+                        for ($i = 0; $i < count($series_comedia); $i++) {
                             ?>
                             <div class="col">
                                 <div class="card bg-dark text-light h-100 shadow-sm">
@@ -171,18 +168,17 @@ $series_terror = [
     ["titulo" => "Channel Zero", "imagem" => "https://m.media-amazon.com/images/I/813mpVeksGL._AC_SY741_.jpg", "atores" => "Paul Schneider, Fiona Shaw, Amy Forsyth", "diretor" => "Nick Antosca", "classificacao" => "18", "episodios" => 24, "temporadas" => 4]
 ];
 ?>
-            <h4 class="text-light mb-3">Séries de terror</h4>
-            <div id="carouselTerror" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <?php
-                    for ($i = 0; $i < count($series_terror); $i++) {
-                    ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $series_terror[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $series_terror[$i]["titulo"] ?>">
+    <h4 class="text-light mb-3">Séries de terror</h4>
+        <div id="carouselTerror" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <?php
+                        for ($i = 0; $i < count($series_terror); $i++) {
+                        ?>
+                        <div class="col">
+                            <div class="card bg-dark text-light h-100 shadow-sm">
+                                <img src="<?= $series_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_terror[$i]["titulo"] ?>">
                                     <div class="card-body">
                                         <h6 class="card-title mb-1"><?= $series_terror[$i]["titulo"] ?></h6>
                                         <p class="card-text small"><strong>Direção:</strong> <?= $series_terror[$i]["diretor"] ?></p>
