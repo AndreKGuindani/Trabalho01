@@ -1,3 +1,10 @@
-Trabalho 01 de Programação
-Desenvolvido por André Felipe Braghini do Nascimento e André Kolett Guindani
-Foi utilizado PHP, html e css
+# Filmix
+
+## Descrição
+
+Projeto realizado para o projeto 01 de programação
+
+## Participantes
+
+1. André Kolett Guindani
+2. André Felipe Braghini do Nascimento
