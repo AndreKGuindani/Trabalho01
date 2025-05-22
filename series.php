@@ -178,7 +178,8 @@ $series_terror = [
                         ?>
                         <div class="col">
                             <div class="card bg-dark text-light h-100 shadow-sm">
-                                <img src="<?= $series_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_terror[$i]["titulo"] ?>">
+                                <img src="<?= $series_terror[$i]["imagem"] ?>" class="card-img-top"
+                                        alt="<?= $series_terror[$i]["titulo"] ?>">
                                     <div class="card-body">
                                         <h6 class="card-title mb-1"><?= $series_terror[$i]["titulo"] ?></h6>
                                         <p class="card-text small"><strong>Direção:</strong> <?= $series_terror[$i]["diretor"] ?></p>
