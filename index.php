@@ -77,11 +77,6 @@
     </div>
 </section>
 
-
-
-
-
-
 <section class="container-sm pt-5" id="ultimos-lancamentos">
     <?php
     $lancamentos = [
@@ -183,11 +178,7 @@
     </div>
 </section>
 
-
-
-
     </main>
-
 
     <footer class="text-center py-4 border-top border-secondary">
         <p class="mb-1">© 2025 Filmix.</p>
