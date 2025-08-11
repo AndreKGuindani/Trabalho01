@@ -2,7 +2,7 @@
 require_once "ConexaoBD.php";
 require "src/Util.php";
 
-class FilmeDAO
+class FilmesDAO
 {
     public static function inserir($dados)
     {
