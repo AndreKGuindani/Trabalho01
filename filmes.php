@@ -30,16 +30,8 @@
     <main>
     <section class="container-sm pt-5 pb-5" id="acao">
     <?php
-    $filmes_acao = [
-        ["titulo" => "John Wick", "ano" => 2014, "diretor" => "Chad Stahelski", "atores" => "Keanu Reeves, Michael Nyqvist", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/1/13/John_wick_ver3.jpg", "premios" => "Indicado ao MTV Movie Awards e ao World Stunt Awards; venceu prêmios de melhor coreografia de luta."],
-        ["titulo" => "Mad Max: Estrada da Fúria", "ano" => 2015, "diretor" => "George Miller", "atores" => "Tom Hardy, Charlize Theron", "classificacao" => "18 anos", "imagem" => "https://musicart.xboxlive.com/7/eea21900-0000-0000-0000-000000000002/504/image.jpg", "premios" => "Vencedor de 6 Oscars, incluindo Melhor Montagem, Figurino e Direção de Arte; indicado a Melhor Filme."],
-        ["titulo" => "Duro de Matar", "ano" => 1988, "diretor" => "John McTiernan", "atores" => "Bruce Willis, Alan Rickman", "classificacao" => "16 anos", "imagem" => "https://play-lh.googleusercontent.com/qqUD5CdYWfD7O2r_dVguxkIfogWUvNeeuGJToMFHtpAs8ps_dQp21o0WonAXiMMguQGk8w", "premios" => "Indicado a 4 Oscars técnicos; considerado um dos melhores filmes de ação de todos os tempos."],
-        ["titulo" => "O Exterminador do Futuro 2", "ano" => 1991, "diretor" => "James Cameron", "atores" => "Arnold Schwarzenegger, Linda Hamilton", "classificacao" => "14 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/92/91/08/20224693.jpg", "premios" => "Vencedor de 4 Oscars, incluindo Melhores Efeitos Visuais e Som."],
-        ["titulo" => "Gladiador", "ano" => 2000, "diretor" => "Ridley Scott", "atores" => "Russell Crowe, Joaquin Phoenix", "classificacao" => "16 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/4/44/GladiadorPoster.jpg/250px-GladiadorPoster.jpg", "premios" => "Vencedor de 5 Oscars, incluindo Melhor Filme e Melhor Ator (Russell Crowe)."],
-        ["titulo" => "A Origem", "ano" => 2010, "diretor" => "Christopher Nolan", "atores" => "Leonardo DiCaprio, Joseph Gordon-Levitt", "classificacao" => "14 anos", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/8/84/AOrigemPoster.jpg", "premios" => "Ganhou 4 Oscars, incluindo Melhor Fotografia e Efeitos Visuais."],
-        ["titulo" => "Missão Impossível", "ano" => 1996, "diretor" => "Brian De Palma", "atores" => "Tom Cruise, Jon Voight", "classificacao" => "12 anos", "imagem" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwQQ3KvN9W7366QI3e0wpFpY5gVMR135OXfg&s", "premios" => "Indicado ao MTV Movie Awards; sucesso comercial e de crítica."],
-        ["titulo" => "Os Vingadores", "ano" => 2012, "diretor" => "Joss Whedon", "atores" => "Robert Downey Jr., Chris Evans", "classificacao" => "12 anos", "imagem" => "https://br.web.img2.acsta.net/medias/nmedia/18/89/43/82/20052140.jpg", "premios" => "Indicado ao Oscar de Melhores Efeitos Visuais; venceu vários prêmios de escolha do público."],
-    ];
+    require_once "src/FilmesDAO.php";
+    $filmes_acao = FilmesDAO::listarCategoria(1);
 
     ?>
 
@@ -50,13 +42,13 @@
             $modalId = "modal_" . $i;
         ?>
         <div class="card bg-dark text-light shadow-sm">
-            <img src="<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
+            <img src="assets/img/<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
             <div class="card-body cardFilm">
                 <h6 class="card-title"><?= $filmes_acao[$i]["titulo"] ?></h6>
                 <p class="card-text small"><strong>Ano:</strong> <?= $filmes_acao[$i]["ano"] ?></p>
                 <p class="card-text small"><strong>Diretor:</strong> <?= $filmes_acao[$i]["diretor"] ?></p>
-                <p class="card-text small"><strong>Atores:</strong> <?= $filmes_acao[$i]["atores"] ?></p>
-                <p class="card-text small"><strong>Classificação:</strong> <?= $filmes_acao[$i]["classificacao"] ?></p>
+                <p class="card-text small"><strong>Atores:</strong> <?= $filmes_acao[$i]["elenco"] ?></p>
+                <p class="card-text small"><strong>Classificação:</strong> <?= $filmes_acao[$i]["idcategoria"] ?></p>
                 <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
             </div>
         </div>
