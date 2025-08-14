@@ -6,12 +6,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>Cadastrar Filme</title>
 </head>
-<body class="container">
-    <h2 class="text-center">Cadastro de Filmes</h2>
+<body class="container bg-black text-light">
+    <h1 class="text-center font-monospace text-danger fw-bold mt-2">Cadastro de Filmes</h1>
     <form action="cadastro-filme.php" class="row" method="POST" enctype="multipart/form-data">
         <div class="mb-3 col-6">
-            <label for="nome" class="form-label">Titúlo</label>
-            <input type="text" class="form-control" name="titulo" placeholder="Digite o Titúlo do Filme">
+            <label for="nome" class="form-label">Título</label>
+            <input type="text" class="form-control" name="titulo" placeholder="Digite o Título do Filme">
         </div>
         <div class="mb-3 col-6">
             <label class="form-label">Diretor</label>
@@ -51,7 +51,7 @@
                 $classificacao = ClassificacaoDAO::listarClassificacao();
                 for ($i=0; $i < count($classificacao) ; $i++) { 
                 ?>
-                <option value=<?=$classificacao[$i]["idclassificacao"]?>><?=$classificacao[$i]["idade"]?></option>
+                <option value=<?=$classificacao[$i]["idclassificacao"]?>><?=$classificacao[$i]["nome"]?></option>
                 <?php
                 }
                 ?>
@@ -63,8 +63,12 @@
         </div>
        
         <div>
-        <button type="submit" class="btn btn-primary col-12">Cadastrar</button>
+        <button type="submit" class="btn btn-danger col-12">Cadastrar</button>
         </div>
     </form>
 </body>
+    <footer class="text-center py-4">
+        <p class="mb-1">© 2025 Filmix.</p>
+        <small>Desenvolvido por André Guindani e André Nascimento</small>
+    </footer>
 </html>
