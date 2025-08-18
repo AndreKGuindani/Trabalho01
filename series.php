@@ -1,3 +1,6 @@
+<?php
+require_once "src/SeriesDAO.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,18 +12,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="assets/style.css"/>
+    <link rel="stylesheet" href="assets/style.css" />
     <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Filmix - Filmes e Séries</title>
+    <title>Filmix - Séries</title>
 </head>
 
 <body>
     <header class="shadow-sm fixed-top">
         <nav class="container-sm d-flex justify-content-between align-items-center py-3">
-            <a href="index.php" class="logo">🎬 <strong>Filmix</strong></a>
+            <a href="index.php" class="logo"><strong>Filmix Séries</strong></a>
             <ul class="d-flex gap-3 mb-0">
                 <li><a class="nav-link" href="#acao">Ação</a></li>
-                <li><a class="nav-link" href="#suspense">Supense</a></li>
+                <li><a class="nav-link" href="#suspense">Suspense</a></li>
                 <li><a class="nav-link" href="#comedia">Comédia</a></li>
                 <li><a class="nav-link" href="#terror">Terror</a></li>
             </ul>
@@ -28,175 +31,184 @@
     </header>
 
     <main>
-    <section class="container-sm pt-5" id="acao">
-        <?php
-        require_once "src/SeriesDAO.php";
-        $series_acao = SeriesDao::listarCategoria(1);
-?>
-    <h4 class="text-light mb-3">Séries de ação</h4>
-        <div id="carouselExample" class="carousel slide">
-             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row g-4">
-                        <?php
-                        for ($i=0;$i<count($series_acao); $i++) {
-                        ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $series_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_acao[$i]["titulo"] ?>">
-                                        <div class="card-body">
-                                            <h6 class="card-title mb-1"><?= $series_acao[$i]["titulo"] ?></h6>
-                                            <p class="card-text small"><strong>Diretor:</strong>
-                                                <?= $series_acao[$i]["diretor"] ?></p>
-                                            <p class="card-text small"><strong>Atores:</strong>
-                                                <?= $series_acao[$i]["atores"] ?></p>
-                                            <p class="card-text small"><strong>Classificação:</strong>
-                                                <?= $series_acao[$i]["classificacao"] ?></p>
-                                            <p class="card-text small"><strong>Episódios:</strong>
-                                                <?= $series_acao[$i]["episodios"] ?></p>
-                                            <p class="card-text small"><strong>Temporadas:</strong>
-                                                <?= $series_acao[$i]["temporadas"] ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php } ?>
-                            </div>
-                        </div>
+        <!-- Séries de Ação -->
+        <section class="container-sm pt-5 pb-5" id="acao">
+            <?php
+            $series_acao = SeriesDAO::listarCategoria(1);
+            ?>
+            <h4 class="text-light mb-3">Séries de Ação</h4>
+            <div class="scroll-carousel px-2">
+                <?php
+                for ($i = 0; $i < count($series_acao); $i++) {
+                    $modalId = "modal_acao_" . $i;
+                ?>
+                <div class="card bg-dark text-light shadow-sm">
+                    <img src="assets/img/<?= $series_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_acao[$i]["titulo"] ?>">
+                    <div class="card-body cardFilm">
+                        <h6 class="card-title"><?= $series_acao[$i]["titulo"] ?></h6>
+                        <p class="card-text small"><strong>Ano:</strong> <?= $series_acao[$i]["ano"] ?></p>
+                        <p class="card-text small"><strong>Diretor:</strong> <?= $series_acao[$i]["diretor"] ?></p>
+                        <p class="card-text small"><strong>Atores:</strong> <?= $series_acao[$i]["elenco"] ?></p>
+                        <p class="card-text small"><strong>Temporadas:</strong> <?= $series_acao[$i]["temporadas"] ?></p>
+                        <p class="card-text small"><strong>Episódios:</strong> <?= $series_acao[$i]["episodios"] ?></p>
+                        <p class="card-text small"><strong>Classificação:</strong> <?= $series_acao[$i]["nome"] ?></p>
+                        <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
                     </div>
                 </div>
-        </section>
 
-        <section class="container-sm pt-5" id="suspense">
-        <?php
-$series_suspense = [
-    ["titulo" => "Mindhunter", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/19/08/07/17/01/2286697.jpg", "atores" => "Jonathan Groff, Holt McCallany, Anna Torv", "diretor" => "David Fincher", "classificacao" => "16", "episodios" => 19, "temporadas" => 2],
-    ["titulo" => "You", "imagem" => "https://br.web.img2.acsta.net/c_310_420/pictures/18/12/31/02/49/2373131.jpg", "atores" => "Penn Badgley, Victoria Pedretti, Elizabeth Lail", "diretor" => "Greg Berlanti", "classificacao" => "18", "episodios" => 40, "temporadas" => 4],
-    ["titulo" => "Dark", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/f/f6/Dark_%28s%C3%A9rie%29.jpg/250px-Dark_%28s%C3%A9rie%29.jpg", "atores" => "Louis Hofmann, Karoline Eichhorn, Lisa Vicari", "diretor" => "Baran bo Odar", "classificacao" => "16", "episodios" => 26, "temporadas" => 3],
-    ["titulo" => "The Sinner", "imagem" => "https://m.media-amazon.com/images/I/71Bhgm9ml+L._SY466_.jpg", "atores" => "Bill Pullman, Jessica Biel, Carrie Coon", "diretor" => "Derek Simonds", "classificacao" => "16", "episodios" => 32, "temporadas" => 4],
-    ["titulo" => "True Detective", "imagem" => "https://m.media-amazon.com/images/I/81dEbr7mJCL._AC_SY741_.jpg", "atores" => "Matthew McConaughey, Woody Harrelson, Mahershala Ali", "diretor" => "Nic Pizzolatto", "classificacao" => "18", "episodios" => 28, "temporadas" => 4]
-];
-?>
-    <h4 class="text-light mb-3">Séries de suspense</h4>
-        <div id="carouselSuspense" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row g-4">
-                        <?php
-                        for ($i = 0; $i < count($series_suspense); $i++) {
-                        ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_suspense[$i]["titulo"] ?>">
-                                    <div class="card-body">
-                                        <h6 class="card-title mb-1"><?= $series_suspense[$i]["titulo"] ?></h6>
-                                        <p class="card-text small"><strong>Diretor:</strong>
-                                            <?= $series_suspense[$i]["diretor"] ?></p>
-                                        <p class="card-text small"><strong>Atores:</strong>
-                                            <?= $series_suspense[$i]["atores"] ?></p>
-                                        <p class="card-text small"><strong>Classificação:</strong>
-                                            <?= $series_suspense[$i]["classificacao"] ?></p>
-                                        <p class="card-text small"><strong>Episódios:</strong>
-                                                <?= $series_acao[$i]["episodios"] ?></p>
-                                        <p class="card-text small"><strong>Temporadas:</strong>
-                                                <?= $series_acao[$i]["temporadas"] ?></p>
-                                    </div>
-                                </div>
+                <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $series_acao[$i]["titulo"] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                             </div>
-                            <?php } ?>
+                            <div class="modal-body">
+                                <?= $series_acao[$i]["premios"] ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </section>
 
-        <section class="container-sm pt-5" id="comedia">
-        <?php
-$series_comedia = [
-    ["titulo" => "Brooklyn Nine-Nine", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/5/53/Brooklyn_Nine-Nine-4.jpg/250px-Brooklyn_Nine-Nine-4.jpg", "atores" => "Andy Samberg, Terry Crews, Andre Braugher", "diretor" => "Dan Goor", "classificacao" => "12", "episodios" => 153, "temporadas" => 8],
-    ["titulo" => "The Office", "imagem" => "https://s2-globo-play.glbimg.com/HomxwhkLrDhwT6sFt5RXgcgx96A=/362x536/https://s2-globo-play.glbimg.com/in6oR4M41TejLgIJ94tqwLxeTJ4=/https://s2.glbimg.com/3LTM2R5PA0QJcvgIQCouS8fEas4=/i.s3.glbimg.com/v1/AUTH_c3c606ff68e7478091d1ca496f9c5625/internal_photos/bs/2024/R/M/99jt5YRRW66h3YKXahdA/2024-4590-the-office-poster.jpg", "atores" => "Steve Carell", "John Krasinski", "Rainn Wilson", "diretor" => "Greg Daniels", "classificacao" => "12", "episodios" => 201, "temporadas" => 9],
-    ["titulo" => "Friends", "imagem" => "https://br.web.img2.acsta.net/c_310_420/pictures/21/05/19/19/32/3752763.jpg", "atores" => "Jennifer Aniston, Courteney Cox, Matthew Perry", "diretor" => "David Crane", "classificacao" => "12", "episodios" => 236, "temporadas" => 10],
-    ["titulo" => "How I Met Your Mother", "imagem" => "https://m.media-amazon.com/images/I/81XmuItZwyL.__AC_SX300_SY300_QL70_ML2_.jpg", "atores" => "Josh Radnor, Jason Segel, Cobie Smulders", "diretor" => "Pamela Fryman", "classificacao" => "14", "episodios" => 208, "temporadas" => 9],
-    ["titulo" => "The Big Bang Theory", "imagem" => "https://m.media-amazon.com/images/I/81ksNXITStL._AC_UF1000,1000_QL80_.jpg", "atores" => "Jim Parsons, Johnny Galecki, Kaley Cuoco", "diretor" => "Chuck Lorre", "classificacao" => "12", "episodios" => 279, "temporadas" => 12]
-];
-?>
-    <h4 class="text-light mb-3">Séries de comédia</h4>
-        <div id="carouselComedia" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row g-4">
-                        <?php
-                        for ($i = 0; $i < count($series_comedia); $i++) {
-                            ?>
-                            <div class="col">
-                                <div class="card bg-dark text-light h-100 shadow-sm">
-                                    <img src="<?= $series_comedia[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $series_comedia[$i]["titulo"] ?>">
-                                    <div class="card-body">
-                                        <h6 class="card-title mb-1"><?= $series_comedia[$i]["titulo"] ?></h6>
-                                        <p class="card-text small"><strong>Diretor:</strong>
-                                            <?= $series_comedia[$i]["diretor"] ?></p>
-                                        <p class="card-text small"><strong>Atores:</strong>
-                                            <?= $series_comedia[$i]["atores"] ?></p>
-                                        <p class="card-text small"><strong>Classificação:</strong>
-                                            <?= $series_comedia[$i]["classificacao"] ?></p>
-                                        <p class="card-text small"><strong>Episódios:</strong>
-                                                <?= $series_acao[$i]["episodios"] ?></p>
-                                        <p class="card-text small"><strong>Temporadas:</strong>
-                                                <?= $series_acao[$i]["temporadas"] ?></p>
-                                    </div>
-                                </div>
+        <section class="container-sm pt-5 pb-5" id="suspense">
+            <?php
+            $series_suspense = SeriesDAO::listarCategoria(2);
+            ?>
+            <h4 class="text-light mb-3">Séries de Suspense</h4>
+            <div class="scroll-carousel px-2">
+                <?php
+                for ($i = 0; $i < count($series_suspense); $i++) {
+                    $modalId = "modal_acao_" . $i;
+                ?>
+                <div class="card bg-dark text-light shadow-sm">
+                    <img src="assets/img/<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_suspense[$i]["titulo"] ?>">
+                    <div class="card-body cardFilm">
+                        <h6 class="card-title"><?= $series_suspense[$i]["titulo"] ?></h6>
+                        <p class="card-text small"><strong>Ano:</strong> <?= $series_suspense[$i]["ano"] ?></p>
+                        <p class="card-text small"><strong>Diretor:</strong> <?= $series_suspense[$i]["diretor"] ?></p>
+                        <p class="card-text small"><strong>Atores:</strong> <?= $series_suspense[$i]["elenco"] ?></p>
+                        <p class="card-text small"><strong>Temporadas:</strong> <?= $series_suspense[$i]["temporadas"] ?></p>
+                        <p class="card-text small"><strong>Episódios:</strong> <?= $series_suspense[$i]["episodios"] ?></p>
+                        <p class="card-text small"><strong>Classificação:</strong> <?= $series_suspense[$i]["nome"] ?></p>
+                        <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $series_suspense[$i]["titulo"] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                             </div>
-                            <?php } ?>
+                            <div class="modal-body">
+                                <?= $series_suspense[$i]["premios"] ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </section>
+        <section class="container-sm pt-5 pb-5" id="comedia">
+            <?php
+            $series_comedia = SeriesDAO::listarCategoria(3);
+            ?>
+            <h4 class="text-light mb-3">Séries de Comédia</h4>
+            <div class="scroll-carousel px-2">
+                <?php
+                for ($i = 0; $i < count($series_comedia); $i++) {
+                    $modalId = "modal_acao_" . $i;
+                ?>
+                <div class="card bg-dark text-light shadow-sm">
+                    <img src="assets/img/<?= $series_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_comedia[$i]["titulo"] ?>">
+                    <div class="card-body cardFilm">
+                        <h6 class="card-title"><?= $series_comedia[$i]["titulo"] ?></h6>
+                        <p class="card-text small"><strong>Ano:</strong> <?= $series_comedia[$i]["ano"] ?></p>
+                        <p class="card-text small"><strong>Diretor:</strong> <?= $series_comedia[$i]["diretor"] ?></p>
+                        <p class="card-text small"><strong>Atores:</strong> <?= $series_comedia[$i]["elenco"] ?></p>
+                        <p class="card-text small"><strong>Temporadas:</strong> <?= $series_comedia[$i]["temporadas"] ?></p>
+                        <p class="card-text small"><strong>Episódios:</strong> <?= $series_comedia[$i]["episodios"] ?></p>
+                        <p class="card-text small"><strong>Classificação:</strong> <?= $series_comedia[$i]["nome"] ?></p>
+                        <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
+                    </div>
+                </div>
 
-        <section class="container-sm pb-5 mt-5" id="terror">
-        <?php
-$series_terror = [
-    ["titulo" => "The Haunting of Hill House", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/thumb/c/cd/The_Haunting_of_Hill_House_poster.jpg/250px-The_Haunting_of_Hill_House_poster.jpg", "atores" => "Victoria Pedretti, Oliver Jackson-Cohen, Carla Gugino", "diretor" => "Mike Flanagan", "classificacao" => "16", "episodios" => 10, "temporadas" => 1],
-    ["titulo" => "Marianne", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/19/09/09/15/42/0355057.jpg", "atores" => "Victoire Du Bois, Lucie Boujenah, Tiphaine Daviot", "diretor" => "Samuel Bodin", "classificacao" => "18", "episodios" => 8, "temporadas" => 1],
-    ["titulo" => "American Horror Story", "imagem" => "https://m.media-amazon.com/images/I/A183TI+4+6L._AC_SY741_.jpg", "atores" => "Sarah Paulson, Evan Peters, Jessica Lange", "diretor" => "Ryan Murphy", "classificacao" => "18", "episodios" => 130, "temporadas" => 12],
-    ["titulo" => "Archive 81", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/21/12/14/17/35/4889759.jpg", "atores" => "Mamoudou Athie, Dina Shihabi, Evan Jonigkeit", "diretor" => "Rebecca Sonnenshine", "classificacao" => "16", "episodios" => 8, "temporadas" => 1],
-    ["titulo" => "Channel Zero", "imagem" => "https://m.media-amazon.com/images/I/813mpVeksGL._AC_SY741_.jpg", "atores" => "Paul Schneider, Fiona Shaw, Amy Forsyth", "diretor" => "Nick Antosca", "classificacao" => "18", "episodios" => 24, "temporadas" => 4]
-];
-?>
-    <h4 class="text-light mb-3">Séries de terror</h4>
-        <div id="carouselTerror" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row g-4">
-                        <?php
-                        for ($i = 0; $i < count($series_terror); $i++) {
-                        ?>
-                        <div class="col">
-                            <div class="card bg-dark text-light h-100 shadow-sm">
-                                <img src="<?= $series_terror[$i]["imagem"] ?>" class="card-img-top"
-                                        alt="<?= $series_terror[$i]["titulo"] ?>">
-                                    <div class="card-body">
-                                        <h6 class="card-title mb-1"><?= $series_terror[$i]["titulo"] ?></h6>
-                                        <p class="card-text small"><strong>Direção:</strong> <?= $series_terror[$i]["diretor"] ?></p>
-                                        <p class="card-text small"><strong>Atores:</strong> <?= $series_terror[$i]["atores"] ?></p>
-                                        <p class="card-text small"><strong>Classificação:</strong> <?= $series_terror[$i]["classificacao"] ?></p>
-                                        <p class="card-text small"><strong>Episódios:</strong> <?= $series_terror[$i]["episodios"] ?></p>
-                                        <p class="card-text small"><strong>Temporadas:</strong> <?= $series_terror[$i]["temporadas"] ?></p>
-                                        </p>
-                                    </div>
-                                </div>
+                <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $series_comedia[$i]["titulo"] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                             </div>
-                            <?php } ?>
+                            <div class="modal-body">
+                                <?= $series_comedia[$i]["premios"] ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
             </div>
         </section>
+        <section class="container-sm pt-5 pb-5" id="terror">
+            <?php
+            $series_terror = SeriesDAO::listarCategoria(4);
+            ?>
+            <h4 class="text-light mb-3">Séries de Ação</h4>
+            <div class="scroll-carousel px-2">
+                <?php
+                for ($i = 0; $i < count($series_terror); $i++) {
+                    $modalId = "modal_acao_" . $i;
+                ?>
+                <div class="card bg-dark text-light shadow-sm">
+                    <img src="assets/img/<?= $series_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_terror[$i]["titulo"] ?>">
+                    <div class="card-body cardFilm">
+                        <h6 class="card-title"><?= $series_terror[$i]["titulo"] ?></h6>
+                        <p class="card-text small"><strong>Ano:</strong> <?= $series_terror[$i]["ano"] ?></p>
+                        <p class="card-text small"><strong>Diretor:</strong> <?= $series_terror[$i]["diretor"] ?></p>
+                        <p class="card-text small"><strong>Atores:</strong> <?= $series_terror[$i]["elenco"] ?></p>
+                        <p class="card-text small"><strong>Temporadas:</strong> <?= $series_terror[$i]["temporadas"] ?></p>
+                        <p class="card-text small"><strong>Episódios:</strong> <?= $series_terror[$i]["episodios"] ?></p>
+                        <p class="card-text small"><strong>Classificação:</strong> <?= $series_terror[$i]["nome"] ?></p>
+                        <button type="button" class="btn btn-sm mt-2 btnModal" data-bs-toggle="modal" data-bs-target="#<?= $modalId ?>">Ver Prêmios</button>
+                    </div>
+                </div>
 
+                <div class="modal fade" id="<?= $modalId ?>" tabindex="-1" aria-labelledby="<?= $modalId ?>Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="<?= $modalId ?>Label">Prêmios - <?= $series_terror[$i]["titulo"] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <?= $series_terror[$i]["premios"] ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+        </section>
     </main>
 
     <footer class="text-center py-4">
-        <p class="mb-1">© 2025 Filmix.</p>
+        <p class="mb-1">© 2025 Filmix Séries.</p>
         <small>Desenvolvido por André Guindani e André Nascimento</small>
     </footer>
 </body>

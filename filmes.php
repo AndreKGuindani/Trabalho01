@@ -1,3 +1,6 @@
+<?php
+require_once "src/FilmesDAO.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -17,7 +20,7 @@
 <body>
     <header class="shadow-sm fixed-top">
         <nav class="container-sm d-flex justify-content-between align-items-center py-3">
-            <a href="index.php" class="logo">🎬 <strong>Filmix</strong></a>
+            <a href="index.php" class="logo"><strong>Filmix Filmes</strong></a>
             <ul class="d-flex gap-3 mb-0">
                 <li><a class="nav-link" href="#acao">Ação</a></li>
                 <li><a class="nav-link" href="#suspense">Supense</a></li>
@@ -30,7 +33,6 @@
     <main>
     <section class="container-sm pt-5 pb-5" id="acao">
     <?php
-    require_once "src/FilmesDAO.php";
     $filmes_acao = FilmesDAO::listarCategoria(1);
 
     ?>
@@ -75,7 +77,6 @@
 
 <section class="container-sm pt-5 pb-5" id="suspense">
     <?php
-    require_once "src/FilmesDAO.php";
     $filmes_acao = FilmesDAO::listarCategoria(2);
 
     ?>
@@ -121,7 +122,6 @@
 
 <section class="container-sm pb-5" id="comedia">
     <?php
-    require_once "src/FilmesDAO.php";
     $filmes_acao = FilmesDAO::listarCategoria(3);
 
     ?>
@@ -167,7 +167,6 @@
 
         <section class="container-sm pt-5 pb-5" id="terror">
     <?php
-    require_once "src/FilmesDAO.php";
     $filmes_acao = FilmesDAO::listarCategoria(4);
 
     ?>
