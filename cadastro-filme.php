@@ -5,4 +5,4 @@ FilmesDAO::inserir($_POST);
 
 echo "deu boa!";
 
-header("location:cadastro-filmes.php");
+header("location:form-filmes.php");

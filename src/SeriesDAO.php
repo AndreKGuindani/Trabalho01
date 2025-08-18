@@ -39,11 +39,12 @@ class SeriesDAO
         $stmt->execute();
     }
 
-    public static function listar()
+        public static function listarCategoria($idcategoria)
     {
         $conexao = ConexaoBD::conectar();
-        $sql = "SELECT * FROM serie";
+        $sql = "SELECT * FROM serie, classificacao WHERE idcategoria = ? and serie.idclassificacao=classificacao.idclassificacao";
         $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(1, $idcategoria);
         $stmt->execute();
         $series = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $series;

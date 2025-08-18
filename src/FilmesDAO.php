@@ -38,8 +38,9 @@ class FilmesDAO
     public static function listarCategoria($idcategoria)
     {
         $conexao = ConexaoBD::conectar();
-        $sql = "SELECT * FROM filme, categoria WHERE filme.idcategoria = categoria.idcategoria AND filme.idcategoria = $idcategoria";
+        $sql = "SELECT * FROM filme, classificacao WHERE idcategoria = ? and filme.idclassificacao=classificacao.idclassificacao";
         $stmt = $conexao->prepare($sql);
+        $stmt->bindParam(1, $idcategoria);
         $stmt->execute();
         $filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $filmes;

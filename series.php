@@ -30,13 +30,8 @@
     <main>
     <section class="container-sm pt-5" id="acao">
         <?php
-$series_acao = [
-    ["titulo" => "Jack Ryan", "imagem" => "https://upload.wikimedia.org/wikipedia/pt/b/b6/Jack_Ryan_s%C3%A9rie.jpg", "atores" => "John Krasinski, Wendell Pierce, Abbie Cornish", "diretor" => "Carlton Cuse", "classificacao" => "16", "episodios" => 30, "temporadas" => 4],
-    ["titulo" => "The Boys", "imagem" => "https://br.web.img3.acsta.net/c_310_420/pictures/19/07/09/14/34/1532536.jpg?coixp=57&coiyp=52", "atores" => "Karl Urban, Jack Quaid, Antony Starr", "diretor" => "Eric Kripke", "classificacao" => "18", "episodios" => 24, "temporadas" => 3],
-    ["titulo" => "24 Horas", "imagem" => "https://images.justwatch.com/poster/300810936/s166/24-horas.avif", "atores" => "Kiefer Sutherland, Mary Lynn Rajskub, Carlos Bernard", "diretor" => "Jon Cassar", "classificacao" => "16", "episodios" => 204, "temporadas" => 9],
-    ["titulo" => "Reacher", "imagem" => "https://imusic.b-cdn.net/images/item/original/195/5056453207195.jpg?reacher-season-2-2024-reacher-season-two-dvd&class=scaled&v=1726227063", "atores" => "Alan Ritchson", "Willa Fitzgerald", "Malcolm Goodwin", "diretor" => "Nick Santora", "classificacao" => "16", "episodios" => 16, "temporadas" => 2],
-    ["titulo" => "Vikings", "imagem" => "https://br.web.img2.acsta.net/c_310_420/pictures/19/12/04/22/35/3436063.jpg", "atores" => "Travis Fimmel, Katheryn Winnick, Clive Standen", "diretor" => "Michael Hirst", "classificacao" => "18", "episodios" => 89, "temporadas" => 6]
-];
+        require_once "src/SeriesDAO.php";
+        $series_acao = SeriesDao::listarCategoria(1);
 ?>
     <h4 class="text-light mb-3">Séries de ação</h4>
         <div id="carouselExample" class="carousel slide">
