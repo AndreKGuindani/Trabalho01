@@ -12,7 +12,7 @@ require_once "src/FilmesDAO.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/filmes.css" />
     <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
     <title>Filmix - Filmes e Séries</title>
 </head>
