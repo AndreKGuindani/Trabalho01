@@ -50,10 +50,10 @@
             $activeClass = 'active'; // A primeira imagem será a ativa
             for ($i = 0; $i < count($destaques); $i++) {
                 ?>
-                <div class="carousel-item <?php echo $activeClass; ?>">
-                    <img src="<?php echo $destaques[$i]['imagem']; ?>" class="d-block w-100" alt="<?php echo $destaques[$i]['alt']; ?>">
+                <div class="carousel-item <?=$activeClass; ?>">
+                    <img src="<?=$destaques[$i]['imagem']; ?>" class="d-block w-100" alt="<?=$destaques[$i]['alt']; ?>">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5><?php echo $destaques[$i]['titulo']; ?></h5>
+                        <h5><?=$destaques[$i]['titulo']; ?></h5>
                     </div>
                 </div>
                 <?php

@@ -20,7 +20,7 @@ require_once "src/FilmesDAO.php";
 <body>
     <header class="shadow-sm fixed-top">
         <nav class="container-sm d-flex justify-content-between align-items-center py-3">
-            <a href="index.php" class="logo"><strong>Filmix Filmes</strong></a>
+            <a href="index.php" class="logo">🎬 <strong>Filmix</strong></a>
             <ul class="d-flex gap-3 mb-0">
                 <li><a class="nav-link" href="#acao">Ação</a></li>
                 <li><a class="nav-link" href="#suspense">Supense</a></li>
