@@ -1,3 +1,7 @@
+/* Importação da fonte Segoe UI */
+@import url("https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap");
+
+/* Reset e configurações globais */
 * {
   padding: 0;
   margin: 0;
@@ -6,20 +10,21 @@
   box-sizing: border-box;
 }
 
-/* Aplicando tipografia elegante e gradiente de fundo sofisticado */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
   color: #ffffff;
-  padding-top: 75px;
+  overflow-x: hidden;
 }
 
+/* Header e navegação */
 header {
   background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 /* Logo com gradiente elegante */
@@ -32,6 +37,12 @@ header {
   font-weight: 800;
   text-decoration: none;
   letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
 /* Links de navegação refinados com efeitos hover sofisticados */
@@ -74,6 +85,48 @@ header {
 main {
   min-height: 500px;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+  padding-top: 80px;
+}
+
+/* Seções principais */
+.section-divider {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e50914, transparent);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #e50914, #ff6b6b, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(45deg, #e50914, #ff6b6b);
+  border-radius: 2px;
 }
 
 /* Títulos das seções mais elegantes com gradiente */
@@ -86,6 +139,20 @@ h4 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -0.5px;
+  position: relative;
+  padding-left: 1rem;
+}
+
+h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(45deg, #e50914, #ff6b6b);
+  border-radius: 2px;
 }
 
 .carousel {
@@ -106,12 +173,33 @@ h4 {
 
 /* Cards com design moderno e efeitos hover impressionantes */
 .card {
-  background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+  background: linear-gradient(145deg, #1e1e1e, #2a2a2a) !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
+  min-width: 280px;
+  max-width: 280px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(229, 9, 20, 0.1), rgba(255, 107, 107, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
@@ -125,10 +213,13 @@ h4 {
   width: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .card:hover img {
   transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .cardFilm {
@@ -137,6 +228,8 @@ h4 {
   justify-content: space-between;
   height: 100%;
   padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 /* Texto dos cards mais legível */
@@ -145,6 +238,7 @@ h4 {
   font-weight: 600;
   margin-bottom: 12px;
   color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .card-text {
@@ -155,6 +249,7 @@ h4 {
 
 .card-text strong {
   color: #e0e0e0;
+  font-weight: 600;
 }
 
 /* Botão modal elegante com gradiente */
@@ -168,12 +263,33 @@ h4 {
   font-size: 14px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btnModal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6b6b, #e50914);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btnModal:hover::before {
+  left: 0;
 }
 
 .btnModal:hover {
   background: linear-gradient(135deg, #b00610, #8a0508);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(229, 9, 20, 0.5);
+  color: #ffffff;
 }
 
 /* Scroll carousel elegante com scrollbar personalizada */
@@ -199,6 +315,7 @@ h4 {
 .scroll-carousel::-webkit-scrollbar-thumb {
   background: linear-gradient(90deg, #e50914, #b00610);
   border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 .scroll-carousel::-webkit-scrollbar-thumb:hover {
@@ -242,10 +359,12 @@ footer small {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   color: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(45deg, rgba(229, 9, 20, 0.1), rgba(255, 107, 107, 0.1));
 }
 
 .modal-footer {
@@ -255,6 +374,30 @@ footer small {
 .modal-title {
   color: #ffffff;
   font-weight: 600;
+}
+
+.modal-body {
+  color: #cccccc;
+  line-height: 1.8;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.btn-secondary {
+  background: linear-gradient(45deg, #666666, #888888);
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(45deg, #888888, #666666);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Animações suaves para seções */
@@ -273,11 +416,57 @@ section {
   }
 }
 
+/* Efeitos especiais */
+.card:hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Seleção de texto */
+::selection {
+  background: rgba(229, 9, 20, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(229, 9, 20, 0.3);
+  color: #ffffff;
+}
+
 /* Responsividade melhorada */
 @media (max-width: 768px) {
   .scroll-carousel .card {
     width: 240px;
     min-width: 240px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 
   h4 {
@@ -286,5 +475,25 @@ section {
 
   .logo {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  .cardFilm {
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

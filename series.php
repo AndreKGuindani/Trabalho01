@@ -12,7 +12,7 @@ require_once "src/SeriesDAO.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="assets/series.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
     <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
     <title>Filmix - Séries</title>
 </head>
@@ -31,11 +31,8 @@ require_once "src/SeriesDAO.php";
     </header>
 
     <main>
-        <!-- Séries de Ação -->
         <section class="container-sm pt-5 pb-5" id="acao">
-            <?php
-            $series_acao = SeriesDAO::listarCategoria(1);
-            ?>
+            <?php $series_acao = SeriesDAO::listarCategoria(1); ?>
             <h4 class="text-light mb-3">Séries de Ação</h4>
             <div class="scroll-carousel px-2">
                 <?php
@@ -77,14 +74,12 @@ require_once "src/SeriesDAO.php";
         </section>
 
         <section class="container-sm pt-5 pb-5" id="suspense">
-            <?php
-            $series_suspense = SeriesDAO::listarCategoria(2);
-            ?>
+            <?php $series_suspense = SeriesDAO::listarCategoria(2); ?>
             <h4 class="text-light mb-3">Séries de Suspense</h4>
             <div class="scroll-carousel px-2">
                 <?php
                 for ($i = 0; $i < count($series_suspense); $i++) {
-                    $modalId = "modal_acao_" . $i;
+                    $modalId = "modal_suspense_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
                     <img src="assets/img/<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_suspense[$i]["titulo"] ?>">
@@ -119,15 +114,14 @@ require_once "src/SeriesDAO.php";
                 <?php } ?>
             </div>
         </section>
+
         <section class="container-sm pt-5 pb-5" id="comedia">
-            <?php
-            $series_comedia = SeriesDAO::listarCategoria(3);
-            ?>
+            <?php $series_comedia = SeriesDAO::listarCategoria(3); ?>
             <h4 class="text-light mb-3">Séries de Comédia</h4>
             <div class="scroll-carousel px-2">
                 <?php
                 for ($i = 0; $i < count($series_comedia); $i++) {
-                    $modalId = "modal_acao_" . $i;
+                    $modalId = "modal_comedia_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
                     <img src="assets/img/<?= $series_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_comedia[$i]["titulo"] ?>">
@@ -162,15 +156,14 @@ require_once "src/SeriesDAO.php";
                 <?php } ?>
             </div>
         </section>
+
         <section class="container-sm pt-5 pb-5" id="terror">
-            <?php
-            $series_terror = SeriesDAO::listarCategoria(4);
-            ?>
-            <h4 class="text-light mb-3">Séries de Ação</h4>
+            <?php $series_terror = SeriesDAO::listarCategoria(4); ?>
+            <h4 class="text-light mb-3">Séries de Terror</h4>
             <div class="scroll-carousel px-2">
                 <?php
                 for ($i = 0; $i < count($series_terror); $i++) {
-                    $modalId = "modal_acao_" . $i;
+                    $modalId = "modal_terror_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
                     <img src="assets/img/<?= $series_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_terror[$i]["titulo"] ?>">
