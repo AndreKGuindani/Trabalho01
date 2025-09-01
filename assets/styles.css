@@ -81,10 +81,8 @@ header {
   box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
 }
 
-/* Main com gradiente mais sofisticado */
 main {
   min-height: 500px;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
   padding-top: 80px;
 }
 
@@ -351,6 +349,10 @@ footer p {
 
 footer small {
   color: #888;
+}
+footer a {
+  text-decoration: none;
+  color: #e0e0e0
 }
 
 /* Melhorias no modal com tema escuro */

@@ -40,7 +40,7 @@ require_once "src/FilmesDAO.php";
                     $modalId = "modal_acao_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
-                    <img src="assets/img/<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
+                    <img src="assets/uploads/<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
                     <div class="card-body cardFilm">
                         <h6 class="card-title"><?= $filmes_acao[$i]["titulo"] ?></h6>
                         <p class="card-text small"><strong>Ano:</strong> <?= $filmes_acao[$i]["ano"] ?></p>
@@ -80,7 +80,7 @@ require_once "src/FilmesDAO.php";
                     $modalId = "modal_suspense_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
-                    <img src="assets/img/<?= $filmes_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_suspense[$i]["titulo"] ?>">
+                    <img src="assets/uploads/<?= $filmes_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_suspense[$i]["titulo"] ?>">
                     <div class="card-body cardFilm">
                         <h6 class="card-title"><?= $filmes_suspense[$i]["titulo"] ?></h6>
                         <p class="card-text small"><strong>Ano:</strong> <?= $filmes_suspense[$i]["ano"] ?></p>
@@ -120,7 +120,7 @@ require_once "src/FilmesDAO.php";
                     $modalId = "modal_comedia_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
-                    <img src="assets/img/<?= $filmes_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_comedia[$i]["titulo"] ?>">
+                    <img src="assets/uploads/<?= $filmes_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_comedia[$i]["titulo"] ?>">
                     <div class="card-body cardFilm">
                         <h6 class="card-title"><?= $filmes_comedia[$i]["titulo"] ?></h6>
                         <p class="card-text small"><strong>Ano:</strong> <?= $filmes_comedia[$i]["ano"] ?></p>
@@ -160,7 +160,7 @@ require_once "src/FilmesDAO.php";
                     $modalId = "modal_terror_" . $i;
                 ?>
                 <div class="card bg-dark text-light shadow-sm">
-                    <img src="assets/img/<?= $filmes_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_terror[$i]["titulo"] ?>">
+                    <img src="assets/uploads/<?= $filmes_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_terror[$i]["titulo"] ?>">
                     <div class="card-body cardFilm">
                         <h6 class="card-title"><?= $filmes_terror[$i]["titulo"] ?></h6>
                         <p class="card-text small"><strong>Ano:</strong> <?= $filmes_terror[$i]["ano"] ?></p>
@@ -195,6 +195,7 @@ require_once "src/FilmesDAO.php";
     <footer class="text-center py-4">
         <p class="mb-1">© 2025 Filmix.</p>
         <small>Desenvolvido por André Guindani e André Nascimento</small>
+        <a href="cadastro-filme.php"><p>Cadastre Filmes</p></a>
     </footer>
 </body>
 

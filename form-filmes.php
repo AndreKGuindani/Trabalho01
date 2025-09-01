@@ -26,7 +26,19 @@
             color: #aaa;
         }
         footer {
-            border-top: 1px solid #333;
+        color: #b0b0b0;
+        font-size: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 60px;
+        }
+
+        footer p {
+        font-weight: 600;
+        color: #e0e0e0;
+        }
+
+        footer small {
+        color: #888;
         }
     </style>
 </head>
