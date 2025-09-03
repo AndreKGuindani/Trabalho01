@@ -13,7 +13,7 @@ require_once "src/FilmesDAO.php";
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="assets/styles.css" />
-    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <title>Filmix - Filmes</title>
 </head>
 
