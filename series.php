@@ -203,7 +203,7 @@ require_once "src/SeriesDAO.php";
     <footer class="text-center py-4">
         <p class="mb-1">© 2025 Filmix Séries.</p>
         <small>Desenvolvido por André Guindani e André Nascimento</small>
-        <a href="cadastro-series.php"><p>Cadastre Séries</p></a>
+        <a href="form-series.php"><p>Cadastre Séries</p></a>
     </footer>
 </body>
 

@@ -43,7 +43,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_filme_acao_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $filmes_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_acao[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $filmes_acao[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $filmes_acao[$i]["ano"] ?></p>
@@ -83,7 +83,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_filme_suspense_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $filmes_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_suspense[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $filmes_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_suspense[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $filmes_suspense[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $filmes_suspense[$i]["ano"] ?></p>
@@ -123,7 +123,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_filme_comedia_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $filmes_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_comedia[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $filmes_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_comedia[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $filmes_comedia[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $filmes_comedia[$i]["ano"] ?></p>
@@ -163,7 +163,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_filme_terror_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $filmes_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_terror[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $filmes_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $filmes_terror[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $filmes_terror[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $filmes_terror[$i]["ano"] ?></p>
@@ -209,7 +209,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_serie_acao_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $series_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_acao[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $series_acao[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_acao[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $series_acao[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $series_acao[$i]["ano"] ?></p>
@@ -251,7 +251,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_serie_suspense_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_suspense[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $series_suspense[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_suspense[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $series_suspense[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $series_suspense[$i]["ano"] ?></p>
@@ -293,7 +293,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_serie_comedia_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $series_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_comedia[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $series_comedia[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_comedia[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $series_comedia[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $series_comedia[$i]["ano"] ?></p>
@@ -335,7 +335,7 @@ require_once "src/SeriesDAO.php";
                             $modalId = "modal_serie_terror_" . $i;
                         ?>
                         <div class="card bg-dark text-light shadow-sm">
-                            <img src="assets/img/<?= $series_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_terror[$i]["titulo"] ?>">
+                            <img src="assets/uploads/<?= $series_terror[$i]["imagem"] ?>" class="card-img-top" alt="<?= $series_terror[$i]["titulo"] ?>">
                             <div class="card-body cardFilm">
                                 <h6 class="card-title"><?= $series_terror[$i]["titulo"] ?></h6>
                                 <p class="card-text small"><strong>Ano:</strong> <?= $series_terror[$i]["ano"] ?></p>

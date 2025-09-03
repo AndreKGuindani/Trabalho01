@@ -1,7 +1,5 @@
-/* Importação da fonte Segoe UI */
 @import url("https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap");
 
-/* Reset e configurações globais */
 * {
   padding: 0;
   margin: 0;
@@ -27,7 +25,7 @@ header {
   z-index: 1000;
 }
 
-/* Logo com gradiente elegante */
+/* Logo com gradiente */
 .logo {
   background: linear-gradient(45deg, #e50914, #ff6b6b);
   -webkit-background-clip: text;
@@ -45,7 +43,7 @@ header {
   filter: brightness(1.2);
 }
 
-/* Links de navegação refinados com efeitos hover sofisticados */
+/* Links de navegação */
 .nav-link {
   color: #e0e0e0;
   font-size: 15px;
@@ -127,7 +125,7 @@ main {
   border-radius: 2px;
 }
 
-/* Títulos das seções mais elegantes com gradiente */
+/* Títulos das seções com gradiente */
 h4 {
   font-size: 28px;
   font-weight: 700;
@@ -169,7 +167,7 @@ h4::before {
   font-weight: 600;
 }
 
-/* Cards com design moderno e efeitos hover impressionantes */
+/* Cards */
 .card {
   background: linear-gradient(145deg, #1e1e1e, #2a2a2a) !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -230,7 +228,7 @@ h4::before {
   z-index: 2;
 }
 
-/* Texto dos cards mais legível */
+/* Texto dos cards */
 .card-title {
   font-size: 18px;
   font-weight: 600;
@@ -250,7 +248,7 @@ h4::before {
   font-weight: 600;
 }
 
-/* Botão modal elegante com gradiente */
+/* Botão modal gradiente */
 .btnModal {
   background: linear-gradient(135deg, #e50914, #b00610);
   color: #fff;
@@ -279,10 +277,6 @@ h4::before {
   z-index: -1;
 }
 
-.btnModal:hover::before {
-  left: 0;
-}
-
 .btnModal:hover {
   background: linear-gradient(135deg, #b00610, #8a0508);
   transform: translateY(-2px);
@@ -290,7 +284,7 @@ h4::before {
   color: #ffffff;
 }
 
-/* Scroll carousel elegante com scrollbar personalizada */
+/* Scroll carousel scrollbar personalizada */
 .scroll-carousel {
   display: flex;
   gap: 20px;
@@ -333,7 +327,7 @@ h4::before {
   object-fit: cover;
 }
 
-/* Footer elegante com gradiente */
+/* Footer com gradiente */
 footer {
   background: linear-gradient(135deg, #111 0%, #0a0a0a 100%);
   color: #b0b0b0;
@@ -355,7 +349,7 @@ footer a {
   color: #e0e0e0
 }
 
-/* Melhorias no modal com tema escuro */
+/* Modal com tema escuro */
 .modal-content {
   background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -366,7 +360,7 @@ footer a {
 
 .modal-header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(45deg, rgba(229, 9, 20, 0.1), rgba(255, 107, 107, 0.1));
+  background:#1a1a1a ;
 }
 
 .modal-footer {
@@ -402,7 +396,7 @@ footer a {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Animações suaves para seções */
+/* Animações para seções */
 section {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -435,23 +429,8 @@ section {
   }
 }
 
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
-}
 
-/* Seleção de texto */
-::selection {
-  background: rgba(229, 9, 20, 0.3);
-  color: #ffffff;
-}
-
-::-moz-selection {
-  background: rgba(229, 9, 20, 0.3);
-  color: #ffffff;
-}
-
-/* Responsividade melhorada */
+/* Responsividade */
 @media (max-width: 768px) {
   .scroll-carousel .card {
     width: 240px;
